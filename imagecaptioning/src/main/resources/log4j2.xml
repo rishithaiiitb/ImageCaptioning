@@ -8,7 +8,7 @@
 
         <!-- Rolling File Appender -->
         <RollingFile name="FileAppender"
-                     fileName="logs/imagecaptioning.log"
+                     fileName="logs/imagecap.log"
                      filePattern="logs/$${date:yyyy-MM}/spring-boot-logger-log4j2-%d{dd-MMMM-yyyy}-%i.log.gz">
             <PatternLayout pattern="%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n%throwable" />
             <Policies>

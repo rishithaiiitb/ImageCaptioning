@@ -1,0 +1,42 @@
+2024-05-18 03:10:31.701 [main] INFO  com.spe.imagecaptioning.ImageCaptioningApplication - Starting ImageCaptioningApplication using Java 17.0.9 with PID 43748 (/home/himarishitha/Desktop/speic/imagecaptioning/target/classes started by himarishitha in /home/himarishitha/Desktop/speic/imagecaptioning)
+2024-05-18 03:10:31.705 [main] INFO  com.spe.imagecaptioning.ImageCaptioningApplication - No active profile set, falling back to 1 default profile: "default"
+2024-05-18 03:10:33.892 [main] INFO  com.spe.imagecaptioning.ImageCaptioningApplication - Started ImageCaptioningApplication in 2.378 seconds (process running for 2.935)
+2024-05-18 03:10:33.894 [main] INFO  com.spe.imagecaptioning.Controller.UserController - Image captioning application started
+2024-05-18 03:12:45.307 [main] INFO  com.spe.imagecaptioning.Service.UserServiceImpl - User found
+2024-05-18 03:12:45.373 [main] ERROR com.spe.imagecaptioning.Service.UserServiceImpl - Wrong password
+2024-05-18 03:12:45.393 [main] INFO  com.spe.imagecaptioning.Service.UserServiceImpl - User found
+2024-05-18 03:12:45.452 [main] INFO  com.spe.imagecaptioning.Service.UserServiceImpl - Logged in successfully
+2024-05-18 03:12:45.462 [main] ERROR com.spe.imagecaptioning.Service.UserServiceImpl - No user found with given email
+2024-05-18 03:12:58.350 [main] INFO  com.spe.imagecaptioning.Service.UserServiceImpl - User found
+2024-05-18 03:12:58.416 [main] ERROR com.spe.imagecaptioning.Service.UserServiceImpl - Wrong password
+2024-05-18 03:12:58.430 [main] INFO  com.spe.imagecaptioning.Service.UserServiceImpl - User found
+2024-05-18 03:12:58.490 [main] INFO  com.spe.imagecaptioning.Service.UserServiceImpl - Logged in successfully
+2024-05-18 03:12:58.499 [main] ERROR com.spe.imagecaptioning.Service.UserServiceImpl - No user found with given email
+2024-05-18 04:20:09.625 [main] INFO  com.spe.imagecaptioning.ImageCaptioningApplication - Starting ImageCaptioningApplication using Java 17.0.9 with PID 55026 (/home/himarishitha/Desktop/speic/imagecaptioning/target/classes started by himarishitha in /home/himarishitha/Desktop/speic/imagecaptioning)
+2024-05-18 04:20:09.629 [main] INFO  com.spe.imagecaptioning.ImageCaptioningApplication - No active profile set, falling back to 1 default profile: "default"
+2024-05-18 04:20:11.971 [main] INFO  com.spe.imagecaptioning.ImageCaptioningApplication - Started ImageCaptioningApplication in 2.522 seconds (process running for 3.047)
+2024-05-18 04:20:11.972 [main] INFO  com.spe.imagecaptioning.Controller.UserController - Image captioning application started
+2024-05-18 04:22:37.344 [main] INFO  com.spe.imagecaptioning.Service.UserServiceImpl - User found
+2024-05-18 04:22:37.419 [main] ERROR com.spe.imagecaptioning.Service.UserServiceImpl - Wrong password
+2024-05-18 04:22:37.436 [main] INFO  com.spe.imagecaptioning.Service.UserServiceImpl - User found
+2024-05-18 04:22:37.499 [main] INFO  com.spe.imagecaptioning.Service.UserServiceImpl - Logged in successfully
+2024-05-18 04:22:37.511 [main] ERROR com.spe.imagecaptioning.Service.UserServiceImpl - No user found with given email
+2024-05-18 04:22:51.560 [main] INFO  com.spe.imagecaptioning.Service.UserServiceImpl - User found
+2024-05-18 04:22:51.627 [main] ERROR com.spe.imagecaptioning.Service.UserServiceImpl - Wrong password
+2024-05-18 04:22:51.643 [main] INFO  com.spe.imagecaptioning.Service.UserServiceImpl - User found
+2024-05-18 04:22:51.704 [main] INFO  com.spe.imagecaptioning.Service.UserServiceImpl - Logged in successfully
+2024-05-18 04:22:51.713 [main] ERROR com.spe.imagecaptioning.Service.UserServiceImpl - No user found with given email
+2024-05-18 04:55:09.562 [main] INFO  com.spe.imagecaptioning.ImageCaptioningApplication - Starting ImageCaptioningApplication using Java 17.0.9 with PID 63895 (/home/himarishitha/Desktop/speic/imagecaptioning/target/classes started by himarishitha in /home/himarishitha/Desktop/speic/imagecaptioning)
+2024-05-18 04:55:09.567 [main] INFO  com.spe.imagecaptioning.ImageCaptioningApplication - No active profile set, falling back to 1 default profile: "default"
+2024-05-18 04:55:12.298 [main] INFO  com.spe.imagecaptioning.ImageCaptioningApplication - Started ImageCaptioningApplication in 2.983 seconds (process running for 3.783)
+2024-05-18 04:55:12.300 [main] INFO  com.spe.imagecaptioning.Controller.UserController - Image captioning application started
+2024-05-18 04:55:41.254 [http-nio-8020-exec-2] INFO  com.spe.imagecaptioning.Controller.UserController - Login end-point called
+2024-05-18 04:55:41.325 [http-nio-8020-exec-2] INFO  com.spe.imagecaptioning.Service.UserServiceImpl - User found
+2024-05-18 04:55:41.404 [http-nio-8020-exec-2] INFO  com.spe.imagecaptioning.Service.UserServiceImpl - Logged in successfully
+2024-05-18 04:55:41.404 [http-nio-8020-exec-2] INFO  com.spe.imagecaptioning.Controller.UserController - Login response sent successfully
+2024-05-18 04:55:42.547 [http-nio-8020-exec-3] INFO  com.spe.imagecaptioning.Controller.UserController - Get past images end-point called
+2024-05-18 04:55:42.572 [http-nio-8020-exec-3] INFO  com.spe.imagecaptioning.Service.UserServiceImpl - Images found for user
+2024-05-18 04:55:42.572 [http-nio-8020-exec-3] INFO  com.spe.imagecaptioning.Controller.UserController - Get past images response sent successfully
+2024-05-18 04:55:42.589 [http-nio-8020-exec-4] INFO  com.spe.imagecaptioning.Controller.UserController - Get past images end-point called
+2024-05-18 04:55:42.605 [http-nio-8020-exec-4] INFO  com.spe.imagecaptioning.Service.UserServiceImpl - Images found for user
+2024-05-18 04:55:42.606 [http-nio-8020-exec-4] INFO  com.spe.imagecaptioning.Controller.UserController - Get past images response sent successfully

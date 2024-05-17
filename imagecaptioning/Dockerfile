@@ -2,7 +2,7 @@
 FROM openjdk:17
 
 # Expose the desired port
-EXPOSE 9002
+EXPOSE 8020
 
 #Copying Jar File
 ADD ./target/imagecaptioning-0.0.1-SNAPSHOT.jar ./

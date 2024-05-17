@@ -6,7 +6,10 @@ import com.spe.imagecaptioning.DTO.LoginDTO;
 import com.spe.imagecaptioning.Entity.Images;
 import com.spe.imagecaptioning.Entity.User;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.boot.web.client.RestTemplateBuilder;
 import org.springframework.stereotype.Service;
+import org.springframework.web.client.HttpClientErrorException;
 import org.springframework.web.client.RestTemplate;
 
 import java.time.LocalDate;
@@ -19,7 +22,7 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 @Service
-public class UserServiceImpl implements UserService{
+public class UserServiceImpl implements UserService {
 
     @Autowired
     private UserDAO userDAO;
@@ -27,25 +30,29 @@ public class UserServiceImpl implements UserService{
     @Autowired
     private ImagesDAO imagesDAO;
 
-    @Autowired
-    private RestTemplate restTemplate;
+    private final RestTemplate icrestTemplate;
 
-    private static final Logger logger = LogManager.getLogger(UserService.class);
+    private static final Logger logger = LogManager.getLogger(UserServiceImpl.class);
+
+    @Value("${ic_service.base.url}")
+    private String icBaseURL;
+
+    public UserServiceImpl(RestTemplateBuilder builder) {
+        this.icrestTemplate = builder.build();
+    }
 
     @Override
     public Boolean verifyUser(LoginDTO loginDTO) {
         User loginUser = userDAO.findByEmail(loginDTO.getEmail());
-        if(loginUser == null) {
+        if (loginUser == null) {
             logger.error("No user found with given email");
             return false;
-        }
-        else {
+        } else {
             logger.info("User found");
-            if(loginUser.isPasswordMatch(loginDTO.getPassword())) {
+            if (loginUser.isPasswordMatch(loginDTO.getPassword())) {
                 logger.info("Logged in successfully");
                 return true;
-            }
-            else{
+            } else {
                 logger.error("Wrong password");
                 return false;
             }
@@ -54,11 +61,10 @@ public class UserServiceImpl implements UserService{
 
     @Override
     public User registerUser(User newUser) {
-        if(Objects.equals(newUser.getEmail(), "")) {
+        if (Objects.equals(newUser.getEmail(), "")) {
             logger.error("User Details cannot be null");
             return null;
-        }
-        else {
+        } else {
             logger.info("New user created");
             return userDAO.save(newUser);
         }
@@ -67,55 +73,59 @@ public class UserServiceImpl implements UserService{
     @Override
     public List<Images> pastImages(String email) {
         User user = userDAO.findByEmail(email);
-        List<Images> images = imagesDAO.findAllByUserId(user.getUserId());
-        if(images == null || images.isEmpty()) {
-            logger.warn("No images found for user");
+        if (user == null) {
+            logger.warn("No user found with given email");
             return null;
         }
-        else{
+        List<Images> images = imagesDAO.findAllByUserId(user.getUserId());
+        if (images == null || images.isEmpty()) {
+            logger.warn("No images found for user");
+            return null;
+        } else {
             logger.info("Images found for user");
             return images;
         }
     }
 
     @Override
-    public String generateCaption(Images image,String email) {
-
-        String djangoUrl = "http://127.0.0.1:8060/predict/";
+    public String generateCaption(Images image, String email) {
+        String djangoUrl = icBaseURL + "/predict/";
         String imageData = image.getImage();
 
         User user = userDAO.findByEmail(email);
-
-        if(imageData == null || imageData.isEmpty()) {
-            logger.warn("No image received");
+        if (user == null) {
+            logger.warn("No user found with given email");
             return null;
         }
-        else {
-            logger.info("Received Image, Generating Caption ");
 
-            String response = restTemplate.postForObject(djangoUrl, "{\"image\": \"" + imageData + "\"}", String.class);
+        if (imageData == null || imageData.isEmpty()) {
+            logger.warn("No image received");
+            return null;
+        } else {
+            logger.info("Received Image, Generating Caption");
+            try {
+                String response = icrestTemplate.postForObject(djangoUrl, "{\"image\": \"" + imageData + "\"}", String.class);
+                JSONObject jsonResponse = new JSONObject(response);
+                String generatedCaption = jsonResponse.getString("caption");
 
-            JSONObject jsonResponse = new JSONObject(response);
-            String generatedCaption = jsonResponse.getString("caption");
-
-            if(generatedCaption != null) {
-                logger.info("Generated Caption for image successfully");
-                // Save the image and its generated caption to the database
-                Images newImage = new Images();
-                newImage.setCreatedAt(LocalDate.now());
-                newImage.setImage(imageData);
-                newImage.setCaption(generatedCaption);
-                newImage.setUser(user);
-                imagesDAO.save(newImage);
-                return generatedCaption;
-            }
-            else {
-                logger.error("Generating Caption for image failed");
+                if (generatedCaption != null) {
+                    logger.info("Generated Caption for image successfully");
+                    // Save the image and its generated caption to the database
+                    Images newImage = new Images();
+                    newImage.setCreatedAt(LocalDate.now());
+                    newImage.setImage(imageData);
+                    newImage.setCaption(generatedCaption);
+                    newImage.setUser(user);
+                    imagesDAO.save(newImage);
+                    return generatedCaption;
+                } else {
+                    logger.error("Generating Caption for image failed");
+                    return null;
+                }
+            } catch (HttpClientErrorException e) {
+                logger.error("Error while generating caption: {}", e.getMessage());
                 return null;
             }
         }
-
     }
-
-
 }

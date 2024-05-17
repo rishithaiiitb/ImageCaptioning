@@ -1,4 +1,0 @@
-2024-05-17 11:21:57.731 [main] INFO  com.spe.imagecaptioning.ImageCaptioningApplication - Starting ImageCaptioningApplication v0.0.1-SNAPSHOT using Java 17.0.9 with PID 52132 (/home/himarishitha/Desktop/spe/imagecaptioning/target/imagecaptioning-0.0.1-SNAPSHOT.jar started by himarishitha in /home/himarishitha/Desktop/spe/imagecaptioning/target)
-2024-05-17 11:21:57.738 [main] INFO  com.spe.imagecaptioning.ImageCaptioningApplication - No active profile set, falling back to 1 default profile: "default"
-2024-05-17 11:22:01.027 [main] INFO  com.spe.imagecaptioning.ImageCaptioningApplication - Started ImageCaptioningApplication in 3.647 seconds (process running for 4.369)
-2024-05-17 11:22:01.030 [main] INFO  com.spe.imagecaptioning.Controller.UserController - Image captioning application started

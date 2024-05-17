@@ -17,7 +17,7 @@ RUN pip install -r ./requirements.txt
 COPY . .
 
 # Expose the desired port
-EXPOSE 9001
+EXPOSE 8060
 
-# Run the Django server on localhost and port 8094
-CMD ["python", "manage.py", "runserver", "0.0.0.0:9001"]
+# Run the Django server on localhost and port 8060
+CMD ["python", "manage.py", "runserver", "0.0.0.0:8060"]
