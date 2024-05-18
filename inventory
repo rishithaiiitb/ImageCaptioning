@@ -1,0 +1,2 @@
+ansible_host=localhost ansible_user=himarishitha ansible_ssh_pass=Rishi@2001
+ansible_ssh_common_args = '-o StrictHostKeyChecking=no'
