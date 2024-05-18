@@ -8,15 +8,6 @@ pipeline {
     }
 
     stages {
-        stage('Cleanup Docker Images') {
-            steps {
-                script {
-                    sh 'docker rm -f imagecapdb model-service imagecap-service imagecapapp || true'
-                    sh 'docker rmi -f rishithaiiitb/bemodel rishithaiiitb/backend rishithaiiitb/frontend || true'
-                }
-            }
-        }
-
         stage('Github Checkout') {
             steps {
                 script {
@@ -25,12 +16,22 @@ pipeline {
             }
         }
 
+        stage('Build Backend with Maven') {
+            steps {
+                script {
+                    dir('imagecaptioning') {
+                        sh 'mvn clean install'
+                    }
+                }
+            }
+        }
+
+
         stage('Build Docker Images') {
             steps {
                 script {
-                    docker.build('rishithaiiitb/bemodel', './model-service')
-                    docker.build('rishithaiiitb/backend', './backend')
-                    docker.build('rishithaiiitb/frontend', './frontend')
+                    docker.build('rishithaiiitb/backend', './imagecaptioning')
+                    docker.build('rishithaiiitb/frontend', './icfe')
                 }
             }
         }
@@ -39,10 +40,6 @@ pipeline {
             steps {
                 script {
                     docker.withRegistry('', "${DOCKERHUB_CREDENTIALS}") {
-                        // Push Model Service Docker Image
-                        sh 'docker tag rishithaiiitb/bemodel rishithaiiitb/bemodel:latest'
-                        sh 'docker push rishithaiiitb/bemodel:latest'
-
                         // Push Backend Docker Image
                         sh 'docker tag rishithaiiitb/backend rishithaiiitb/backend:latest'
                         sh 'docker push rishithaiiitb/backend:latest'
@@ -69,6 +66,9 @@ pipeline {
 
     post {
         always {
+            script {
+                sh 'docker logout'
+            }
             emailext(
                 subject: "Pipeline Status: ${currentBuild.result}",
                 body: "Build URL: ${BUILD_URL}",
