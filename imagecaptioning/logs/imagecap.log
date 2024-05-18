@@ -40,3 +40,18 @@
 2024-05-18 04:55:42.589 [http-nio-8020-exec-4] INFO  com.spe.imagecaptioning.Controller.UserController - Get past images end-point called
 2024-05-18 04:55:42.605 [http-nio-8020-exec-4] INFO  com.spe.imagecaptioning.Service.UserServiceImpl - Images found for user
 2024-05-18 04:55:42.606 [http-nio-8020-exec-4] INFO  com.spe.imagecaptioning.Controller.UserController - Get past images response sent successfully
+2024-05-18 14:52:28.212 [main] INFO  com.spe.imagecaptioning.Service.UserServiceImpl - User found
+2024-05-18 14:52:28.296 [main] ERROR com.spe.imagecaptioning.Service.UserServiceImpl - Wrong password
+2024-05-18 14:52:28.316 [main] INFO  com.spe.imagecaptioning.Service.UserServiceImpl - User found
+2024-05-18 14:52:28.390 [main] INFO  com.spe.imagecaptioning.Service.UserServiceImpl - Logged in successfully
+2024-05-18 14:52:28.402 [main] ERROR com.spe.imagecaptioning.Service.UserServiceImpl - No user found with given email
+2024-05-18 14:55:57.171 [main] INFO  com.spe.imagecaptioning.Service.UserServiceImpl - User found
+2024-05-18 14:55:57.263 [main] ERROR com.spe.imagecaptioning.Service.UserServiceImpl - Wrong password
+2024-05-18 14:55:57.281 [main] INFO  com.spe.imagecaptioning.Service.UserServiceImpl - User found
+2024-05-18 14:55:57.356 [main] INFO  com.spe.imagecaptioning.Service.UserServiceImpl - Logged in successfully
+2024-05-18 14:55:57.367 [main] ERROR com.spe.imagecaptioning.Service.UserServiceImpl - No user found with given email
+2024-05-18 14:56:16.627 [main] INFO  com.spe.imagecaptioning.Service.UserServiceImpl - User found
+2024-05-18 14:56:16.722 [main] ERROR com.spe.imagecaptioning.Service.UserServiceImpl - Wrong password
+2024-05-18 14:56:16.745 [main] INFO  com.spe.imagecaptioning.Service.UserServiceImpl - User found
+2024-05-18 14:56:16.835 [main] INFO  com.spe.imagecaptioning.Service.UserServiceImpl - Logged in successfully
+2024-05-18 14:56:16.848 [main] ERROR com.spe.imagecaptioning.Service.UserServiceImpl - No user found with given email

@@ -20,6 +20,7 @@ pipeline {
             steps {
                 script {
                     dir('imagecaptioning') {
+                    	sh 'mvn clean package'
                         sh 'mvn clean install'
                     }
                 }
