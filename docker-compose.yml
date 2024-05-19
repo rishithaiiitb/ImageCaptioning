@@ -4,7 +4,7 @@ services:
   imagecapdb:
     image: mysql
     ports:
-      - "3307:3306"  # Ensure MySQL is accessible on localhost:3306
+      - "3307:3306"  
     environment:
       MYSQL_ROOT_PASSWORD: Rishi@2001
       MYSQL_DATABASE: imagecaptioning
@@ -39,7 +39,6 @@ services:
       MODEL_SERVICE_URL: http://model-service:8086/predict/
     volumes:
       - logs:/logs
-
     depends_on:
       imagecapdb:
         condition: service_healthy
@@ -64,4 +63,3 @@ networks:
 volumes:
   imagecapdb_data:
   logs:
-
