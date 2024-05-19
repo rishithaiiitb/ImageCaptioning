@@ -82,7 +82,7 @@ pipeline {
                              <br><br>
                              Build URL: ${BUILD_URL}
                              <br><br>
-                             Check the Jenkins console for details:""",
+                             Check the Jenkins console for details.""",
                     to: "rishichinnu27@gmail.com", 
                     from: "jenkins@yourdomain.com",
                     mimeType: 'text/html'
