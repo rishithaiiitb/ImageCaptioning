@@ -37,7 +37,7 @@ services:
       SPRING_JPA_HIBERNATE_DDL_AUTO: update
       SPRING_JPA_SHOW_SQL: true
       MODEL_SERVICE_URL: http://model-service:8086/predict/
-      volumes:
+    volumes:
       - logs:/logs
 
     depends_on:
