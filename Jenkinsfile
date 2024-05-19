@@ -75,12 +75,19 @@ pipeline {
             script {
                 sh 'docker logout'
             }
-            emailext(
-                subject: "Pipeline Status: ${currentBuild.result}",
-                body: "Build URL: ${BUILD_URL}",
-                to: "rishichinnu27@gmail.com",
-                from: "jenkins@yourdomain.com"
-            )
+            script {
+                emailext(
+                    subject: "Pipeline Status: ${currentBuild.result}",
+                    body: """Build Status: ${currentBuild.result}
+                             <br><br>
+                             Build URL: ${BUILD_URL}
+                             <br><br>
+                             Check the Jenkins console for details:""",
+                    to: "rishichinnu27@gmail.com", 
+                    from: "jenkins@yourdomain.com",
+                    mimeType: 'text/html'
+                )
+            }
         }
     }
 }
