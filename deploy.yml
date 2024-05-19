@@ -26,6 +26,25 @@
     - name: Prune unused Docker images
       shell: docker image prune -f
 
+    - name: Check if /ic directory exists
+      stat:
+        path: /ic
+      register: ic_directory
+
+    - name: Create Docker Compose working directory if it does not exist
+      file:
+        path: /ic
+        state: directory
+        owner: root
+        group: root
+        mode: '0755'
+      when: ic_directory.stat.exists == False
+
+    - name: Copy Docker Compose file to host
+      copy:
+        src: /var/lib/jenkins/workspace/ImageCaptioning/docker-compose.yml
+        dest: /ic/docker-compose.yml
+
     - name: Pull Model Service Image
       docker_image:
         name: rishithaiiitb/bemodel
@@ -40,11 +59,6 @@
       docker_image:
         name: rishithaiiitb/frontend
         source: pull
-
-    - name: Copy Docker Compose file to host
-      copy:
-        src: /var/lib/jenkins/workspace/ImageCaptioning/docker-compose.yml
-        dest: /ic/docker-compose.yml
 
     - name: Start Docker Compose Stack
       command: docker-compose up -d
