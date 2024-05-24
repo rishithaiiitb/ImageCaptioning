@@ -50,7 +50,7 @@ pipeline {
                         sh 'docker tag rishithaiiitb/frontend rishithaiiitb/frontend:latest'
                         sh 'docker push rishithaiiitb/frontend:latest'
 
-                        // Push Model Docker Image
+                        // Push Backend Model Docker Image
                         sh 'docker tag rishithaiiitb/bemodel rishithaiiitb/bemodel:latest'
                         sh 'docker push rishithaiiitb/bemodel:latest'
                     }
