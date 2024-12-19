@@ -26,6 +26,11 @@ services:
     networks:
       - ic-network
     restart: on-failure:1
+    healthcheck:
+      test: ["CMD-SHELL", "curl -f http://localhost:8060/ || exit 1"]
+      interval: 60s
+      timeout: 10s
+      retries: 5
 
   imagecap-service:
     container_name: backend
@@ -40,15 +45,18 @@ services:
       SPRING_JPA_HIBERNATE_DDL_AUTO: update
       SPRING_JPA_SHOW_SQL: true
       MODEL_SERVICE_URL: http://model-service:8060/predict/
+<<<<<<< HEAD
       NEW_RELIC_LICENSE_KEY: 23ce2b29dab3435fedbd14dd3cd444feFFFFNRAL
       NEW_RELIC_APP_NAME: image-captioning-backend
+=======
+>>>>>>> de81ff07422c8c463893b905cf0b3341fb57c50f
     volumes:
       - logs:/logs
     depends_on:
       imagecapdb:
         condition: service_healthy
       model-service:
-        condition: service_started
+        condition: service_healthy
     networks:
       - ic-network
     restart: on-failure:1

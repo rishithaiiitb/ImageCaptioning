@@ -33,6 +33,7 @@ pipeline {
                 script {
                     docker.build('rishithaiiitb/backend', './imagecaptioning')
                     docker.build('rishithaiiitb/frontend', './icfe')
+                    docker.build('rishithaiiitb/bemodel', './model')
                 }
             }
         }
@@ -48,6 +49,10 @@ pipeline {
                         // Push Frontend Docker Image
                         sh 'docker tag rishithaiiitb/frontend rishithaiiitb/frontend:latest'
                         sh 'docker push rishithaiiitb/frontend:latest'
+
+                        // Push Model Docker Image
+                        sh 'docker tag rishithaiiitb/bemodel rishithaiiitb/bemodel:latest'
+                        sh 'docker push rishithaiiitb/bemodel:latest'
                     }
                 }
             }
@@ -70,13 +75,21 @@ pipeline {
             script {
                 sh 'docker logout'
             }
-            emailext(
-                subject: "Pipeline Status: ${currentBuild.result}",
-                body: "Build URL: ${BUILD_URL}",
-                to: "rishichinnu27@gmail.com",
-                from: "jenkins@yourdomain.com"
-            )
+            script {
+                emailext(
+                    subject: "Pipeline Status: ${currentBuild.result}",
+                    body: """Build Status: ${currentBuild.result}
+                             <br><br>
+                             Build URL: ${BUILD_URL}
+                             <br><br>
+                             Check the Jenkins console for details.""",
+                    to: "rishichinnu27@gmail.com", 
+                    from: "jenkins@yourdomain.com",
+                    mimeType: 'text/html'
+                )
+            }
         }
     }
 }
+
 
