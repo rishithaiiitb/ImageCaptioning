@@ -1,10 +1,14 @@
-2024-05-18 15:45:47.923 [main] INFO  com.spe.imagecaptioning.Service.UserServiceImpl - User found
-2024-05-18 15:45:47.988 [main] ERROR com.spe.imagecaptioning.Service.UserServiceImpl - Wrong password
-2024-05-18 15:45:48.004 [main] INFO  com.spe.imagecaptioning.Service.UserServiceImpl - User found
-2024-05-18 15:45:48.064 [main] INFO  com.spe.imagecaptioning.Service.UserServiceImpl - Logged in successfully
-2024-05-18 15:45:48.072 [main] ERROR com.spe.imagecaptioning.Service.UserServiceImpl - No user found with given email
-2024-05-18 15:46:02.956 [main] INFO  com.spe.imagecaptioning.Service.UserServiceImpl - User found
-2024-05-18 15:46:03.029 [main] ERROR com.spe.imagecaptioning.Service.UserServiceImpl - Wrong password
-2024-05-18 15:46:03.044 [main] INFO  com.spe.imagecaptioning.Service.UserServiceImpl - User found
-2024-05-18 15:46:03.109 [main] INFO  com.spe.imagecaptioning.Service.UserServiceImpl - Logged in successfully
-2024-05-18 15:46:03.118 [main] ERROR com.spe.imagecaptioning.Service.UserServiceImpl - No user found with given email
+2024-05-20 02:20:47.690 [main] INFO  com.spe.imagecaptioning.ImageCaptioningApplication - Starting ImageCaptioningApplication using Java 17.0.9 with PID 5632 (/home/himarishitha/Desktop/speic/imagecaptioning/target/classes started by himarishitha in /home/himarishitha/Desktop/speic/imagecaptioning)
+2024-05-20 02:20:47.701 [main] INFO  com.spe.imagecaptioning.ImageCaptioningApplication - No active profile set, falling back to 1 default profile: "default"
+2024-05-20 02:20:50.759 [main] INFO  com.spe.imagecaptioning.ImageCaptioningApplication - Started ImageCaptioningApplication in 3.387 seconds (process running for 4.323)
+2024-05-20 02:20:50.761 [main] INFO  com.spe.imagecaptioning.Controller.UserController - Image captioning application started
+2024-05-20 02:22:47.455 [http-nio-8020-exec-2] INFO  com.spe.imagecaptioning.Controller.UserController - Login end-point called
+2024-05-20 02:22:47.533 [http-nio-8020-exec-2] INFO  com.spe.imagecaptioning.Service.UserServiceImpl - User found
+2024-05-20 02:22:47.611 [http-nio-8020-exec-2] INFO  com.spe.imagecaptioning.Service.UserServiceImpl - Logged in successfully
+2024-05-20 02:22:47.611 [http-nio-8020-exec-2] INFO  com.spe.imagecaptioning.Controller.UserController - Login response sent successfully
+2024-05-20 02:23:24.828 [http-nio-8020-exec-3] INFO  com.spe.imagecaptioning.Controller.UserController - Get past images end-point called
+2024-05-20 02:23:24.857 [http-nio-8020-exec-3] INFO  com.spe.imagecaptioning.Service.UserServiceImpl - Images found for user
+2024-05-20 02:23:24.858 [http-nio-8020-exec-3] INFO  com.spe.imagecaptioning.Controller.UserController - Get past images response sent successfully
+2024-05-20 02:23:24.874 [http-nio-8020-exec-4] INFO  com.spe.imagecaptioning.Controller.UserController - Get past images end-point called
+2024-05-20 02:23:24.890 [http-nio-8020-exec-4] INFO  com.spe.imagecaptioning.Service.UserServiceImpl - Images found for user
+2024-05-20 02:23:24.891 [http-nio-8020-exec-4] INFO  com.spe.imagecaptioning.Controller.UserController - Get past images response sent successfully

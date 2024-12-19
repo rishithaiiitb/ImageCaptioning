@@ -1,0 +1,81 @@
+2024-05-19 12:09:14.198 [main] INFO  com.spe.imagecaptioning.ImageCaptioningApplication - Starting ImageCaptioningApplication v0.0.1-SNAPSHOT using Java 17.0.2 with PID 1 (/imagecaptioning-0.0.1-SNAPSHOT.jar started by root in /)
+2024-05-19 12:09:14.217 [main] INFO  com.spe.imagecaptioning.ImageCaptioningApplication - No active profile set, falling back to 1 default profile: "default"
+2024-05-19 12:09:19.751 [main] INFO  com.spe.imagecaptioning.ImageCaptioningApplication - Started ImageCaptioningApplication in 6.077 seconds (process running for 7.303)
+2024-05-19 12:09:19.755 [main] INFO  com.spe.imagecaptioning.Controller.UserController - Image captioning application started
+2024-05-19 12:18:30.078 [http-nio-8020-exec-2] INFO  com.spe.imagecaptioning.Controller.UserController - Register end-point called
+2024-05-19 12:18:30.079 [http-nio-8020-exec-2] INFO  com.spe.imagecaptioning.Service.UserServiceImpl - New user created
+2024-05-19 12:18:30.122 [http-nio-8020-exec-2] INFO  com.spe.imagecaptioning.Controller.UserController - Register response sent successfully
+2024-05-19 12:18:36.643 [http-nio-8020-exec-4] INFO  com.spe.imagecaptioning.Controller.UserController - Register end-point called
+2024-05-19 12:18:36.643 [http-nio-8020-exec-4] ERROR com.spe.imagecaptioning.Service.UserServiceImpl - User Details cannot be null
+2024-05-19 12:18:36.643 [http-nio-8020-exec-4] INFO  com.spe.imagecaptioning.Controller.UserController - Register response sent successfully
+2024-05-19 12:18:49.175 [http-nio-8020-exec-5] INFO  com.spe.imagecaptioning.Controller.UserController - Login end-point called
+2024-05-19 12:18:49.262 [http-nio-8020-exec-5] INFO  com.spe.imagecaptioning.Service.UserServiceImpl - User found
+2024-05-19 12:18:49.336 [http-nio-8020-exec-5] INFO  com.spe.imagecaptioning.Service.UserServiceImpl - Logged in successfully
+2024-05-19 12:18:49.336 [http-nio-8020-exec-5] INFO  com.spe.imagecaptioning.Controller.UserController - Login response sent successfully
+2024-05-19 12:18:55.205 [http-nio-8020-exec-6] INFO  com.spe.imagecaptioning.Controller.UserController - Login end-point called
+2024-05-19 12:18:55.211 [http-nio-8020-exec-6] ERROR com.spe.imagecaptioning.Service.UserServiceImpl - No user found with given email
+2024-05-19 12:18:55.212 [http-nio-8020-exec-6] INFO  com.spe.imagecaptioning.Controller.UserController - Login response sent successfully
+2024-05-19 12:19:04.810 [http-nio-8020-exec-7] INFO  com.spe.imagecaptioning.Controller.UserController - Login end-point called
+2024-05-19 12:19:04.816 [http-nio-8020-exec-7] INFO  com.spe.imagecaptioning.Service.UserServiceImpl - User found
+2024-05-19 12:19:04.898 [http-nio-8020-exec-7] ERROR com.spe.imagecaptioning.Service.UserServiceImpl - Wrong password
+2024-05-19 12:19:04.898 [http-nio-8020-exec-7] INFO  com.spe.imagecaptioning.Controller.UserController - Login response sent successfully
+2024-05-19 12:19:13.415 [http-nio-8020-exec-8] INFO  com.spe.imagecaptioning.Controller.UserController - Login end-point called
+2024-05-19 12:19:13.421 [http-nio-8020-exec-8] INFO  com.spe.imagecaptioning.Service.UserServiceImpl - User found
+2024-05-19 12:19:13.499 [http-nio-8020-exec-8] INFO  com.spe.imagecaptioning.Service.UserServiceImpl - Logged in successfully
+2024-05-19 12:19:13.499 [http-nio-8020-exec-8] INFO  com.spe.imagecaptioning.Controller.UserController - Login response sent successfully
+2024-05-19 12:19:16.447 [http-nio-8020-exec-9] INFO  com.spe.imagecaptioning.Controller.UserController - Get past images end-point called
+2024-05-19 12:19:16.465 [http-nio-8020-exec-9] WARN  com.spe.imagecaptioning.Service.UserServiceImpl - No images found for user
+2024-05-19 12:19:16.465 [http-nio-8020-exec-9] INFO  com.spe.imagecaptioning.Controller.UserController - Get past images response sent successfully
+2024-05-19 12:19:16.469 [http-nio-8020-exec-10] INFO  com.spe.imagecaptioning.Controller.UserController - Get past images end-point called
+2024-05-19 12:19:16.474 [http-nio-8020-exec-10] WARN  com.spe.imagecaptioning.Service.UserServiceImpl - No images found for user
+2024-05-19 12:19:16.474 [http-nio-8020-exec-10] INFO  com.spe.imagecaptioning.Controller.UserController - Get past images response sent successfully
+2024-05-19 12:19:35.917 [http-nio-8020-exec-2] INFO  com.spe.imagecaptioning.Controller.UserController - Generate caption end-point called
+2024-05-19 12:19:35.920 [http-nio-8020-exec-2] INFO  com.spe.imagecaptioning.Service.UserServiceImpl - Received Image, Generating Caption
+2024-05-19 12:19:53.965 [http-nio-8020-exec-2] INFO  com.spe.imagecaptioning.Service.UserServiceImpl - Generated Caption for image successfully
+2024-05-19 12:19:53.998 [http-nio-8020-exec-2] INFO  com.spe.imagecaptioning.Controller.UserController - Generate caption response sent successfully
+2024-05-19 12:20:05.016 [http-nio-8020-exec-4] INFO  com.spe.imagecaptioning.Controller.UserController - Get past images end-point called
+2024-05-19 12:20:05.030 [http-nio-8020-exec-4] INFO  com.spe.imagecaptioning.Service.UserServiceImpl - Images found for user
+2024-05-19 12:20:05.030 [http-nio-8020-exec-4] INFO  com.spe.imagecaptioning.Controller.UserController - Get past images response sent successfully
+2024-05-19 12:20:05.038 [http-nio-8020-exec-3] INFO  com.spe.imagecaptioning.Controller.UserController - Get past images end-point called
+2024-05-19 12:20:05.046 [http-nio-8020-exec-3] INFO  com.spe.imagecaptioning.Service.UserServiceImpl - Images found for user
+2024-05-19 12:20:05.046 [http-nio-8020-exec-3] INFO  com.spe.imagecaptioning.Controller.UserController - Get past images response sent successfully
+2024-05-19 12:20:28.517 [http-nio-8020-exec-5] INFO  com.spe.imagecaptioning.Controller.UserController - Register end-point called
+2024-05-19 12:20:28.517 [http-nio-8020-exec-5] INFO  com.spe.imagecaptioning.Service.UserServiceImpl - New user created
+2024-05-19 12:20:28.525 [http-nio-8020-exec-5] INFO  com.spe.imagecaptioning.Controller.UserController - Register response sent successfully
+2024-05-19 12:20:38.836 [http-nio-8020-exec-6] INFO  com.spe.imagecaptioning.Controller.UserController - Login end-point called
+2024-05-19 12:20:38.842 [http-nio-8020-exec-6] INFO  com.spe.imagecaptioning.Service.UserServiceImpl - User found
+2024-05-19 12:20:38.926 [http-nio-8020-exec-6] ERROR com.spe.imagecaptioning.Service.UserServiceImpl - Wrong password
+2024-05-19 12:20:38.926 [http-nio-8020-exec-6] INFO  com.spe.imagecaptioning.Controller.UserController - Login response sent successfully
+2024-05-19 12:20:42.773 [http-nio-8020-exec-7] INFO  com.spe.imagecaptioning.Controller.UserController - Login end-point called
+2024-05-19 12:20:42.779 [http-nio-8020-exec-7] INFO  com.spe.imagecaptioning.Service.UserServiceImpl - User found
+2024-05-19 12:20:42.859 [http-nio-8020-exec-7] INFO  com.spe.imagecaptioning.Service.UserServiceImpl - Logged in successfully
+2024-05-19 12:20:42.860 [http-nio-8020-exec-7] INFO  com.spe.imagecaptioning.Controller.UserController - Login response sent successfully
+2024-05-19 12:20:44.749 [http-nio-8020-exec-8] INFO  com.spe.imagecaptioning.Controller.UserController - Get past images end-point called
+2024-05-19 12:20:44.755 [http-nio-8020-exec-8] WARN  com.spe.imagecaptioning.Service.UserServiceImpl - No images found for user
+2024-05-19 12:20:44.756 [http-nio-8020-exec-8] INFO  com.spe.imagecaptioning.Controller.UserController - Get past images response sent successfully
+2024-05-19 12:20:44.759 [http-nio-8020-exec-9] INFO  com.spe.imagecaptioning.Controller.UserController - Get past images end-point called
+2024-05-19 12:20:44.764 [http-nio-8020-exec-9] WARN  com.spe.imagecaptioning.Service.UserServiceImpl - No images found for user
+2024-05-19 12:20:44.764 [http-nio-8020-exec-9] INFO  com.spe.imagecaptioning.Controller.UserController - Get past images response sent successfully
+2024-05-19 12:20:58.205 [http-nio-8020-exec-1] INFO  com.spe.imagecaptioning.Controller.UserController - Generate caption end-point called
+2024-05-19 12:20:58.208 [http-nio-8020-exec-1] INFO  com.spe.imagecaptioning.Service.UserServiceImpl - Received Image, Generating Caption
+2024-05-19 12:21:06.624 [http-nio-8020-exec-1] INFO  com.spe.imagecaptioning.Service.UserServiceImpl - Generated Caption for image successfully
+2024-05-19 12:21:06.695 [http-nio-8020-exec-1] INFO  com.spe.imagecaptioning.Controller.UserController - Generate caption response sent successfully
+2024-05-19 12:21:21.642 [http-nio-8020-exec-4] INFO  com.spe.imagecaptioning.Controller.UserController - Generate caption end-point called
+2024-05-19 12:21:21.648 [http-nio-8020-exec-4] INFO  com.spe.imagecaptioning.Service.UserServiceImpl - Received Image, Generating Caption
+2024-05-19 12:21:38.464 [http-nio-8020-exec-4] INFO  com.spe.imagecaptioning.Service.UserServiceImpl - Generated Caption for image successfully
+2024-05-19 12:21:38.508 [http-nio-8020-exec-4] INFO  com.spe.imagecaptioning.Controller.UserController - Generate caption response sent successfully
+2024-05-19 12:21:52.779 [http-nio-8020-exec-3] INFO  com.spe.imagecaptioning.Controller.UserController - Login end-point called
+2024-05-19 12:21:52.783 [http-nio-8020-exec-3] INFO  com.spe.imagecaptioning.Service.UserServiceImpl - User found
+2024-05-19 12:21:52.867 [http-nio-8020-exec-3] INFO  com.spe.imagecaptioning.Service.UserServiceImpl - Logged in successfully
+2024-05-19 12:21:52.867 [http-nio-8020-exec-3] INFO  com.spe.imagecaptioning.Controller.UserController - Login response sent successfully
+2024-05-19 12:21:55.024 [http-nio-8020-exec-5] INFO  com.spe.imagecaptioning.Controller.UserController - Get past images end-point called
+2024-05-19 12:21:55.034 [http-nio-8020-exec-5] INFO  com.spe.imagecaptioning.Service.UserServiceImpl - Images found for user
+2024-05-19 12:21:55.034 [http-nio-8020-exec-5] INFO  com.spe.imagecaptioning.Controller.UserController - Get past images response sent successfully
+2024-05-19 12:21:55.038 [http-nio-8020-exec-6] INFO  com.spe.imagecaptioning.Controller.UserController - Get past images end-point called
+2024-05-19 12:21:55.046 [http-nio-8020-exec-6] INFO  com.spe.imagecaptioning.Service.UserServiceImpl - Images found for user
+2024-05-19 12:21:55.046 [http-nio-8020-exec-6] INFO  com.spe.imagecaptioning.Controller.UserController - Get past images response sent successfully
+2024-05-19 12:22:06.448 [http-nio-8020-exec-7] INFO  com.spe.imagecaptioning.Controller.UserController - Generate caption end-point called
+2024-05-19 12:22:06.454 [http-nio-8020-exec-7] INFO  com.spe.imagecaptioning.Service.UserServiceImpl - Received Image, Generating Caption
+2024-05-19 12:22:23.015 [http-nio-8020-exec-7] INFO  com.spe.imagecaptioning.Service.UserServiceImpl - Generated Caption for image successfully
+2024-05-19 12:22:23.032 [http-nio-8020-exec-7] INFO  com.spe.imagecaptioning.Controller.UserController - Generate caption response sent successfully
+

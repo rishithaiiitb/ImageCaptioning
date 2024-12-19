@@ -2,9 +2,10 @@ version: '3.8'
 
 services:
   imagecapdb:
+    container_name: database
     image: mysql
     ports:
-      - "3307:3306"  # Ensure MySQL is accessible on localhost:3306
+      - "3307:3306"  
     environment:
       MYSQL_ROOT_PASSWORD: Rishi@2001
       MYSQL_DATABASE: imagecaptioning
@@ -18,6 +19,7 @@ services:
       timeout: 60s
 
   model-service:
+    container_name: model
     image: rishithaiiitb/bemodel
     ports:
       - "8060:8060"
@@ -26,6 +28,7 @@ services:
     restart: on-failure:1
 
   imagecap-service:
+    container_name: backend
     image: rishithaiiitb/backend
     ports:
       - "8020:8020"
@@ -36,10 +39,11 @@ services:
       SPRING_DATASOURCE_DRIVER_CLASS_NAME: com.mysql.cj.jdbc.Driver
       SPRING_JPA_HIBERNATE_DDL_AUTO: update
       SPRING_JPA_SHOW_SQL: true
-      MODEL_SERVICE_URL: http://model-service:8086/predict/
-      volumes:
+      MODEL_SERVICE_URL: http://model-service:8060/predict/
+      NEW_RELIC_LICENSE_KEY: 23ce2b29dab3435fedbd14dd3cd444feFFFFNRAL
+      NEW_RELIC_APP_NAME: image-captioning-backend
+    volumes:
       - logs:/logs
-
     depends_on:
       imagecapdb:
         condition: service_healthy
@@ -50,11 +54,13 @@ services:
     restart: on-failure:1
 
   imagecapapp:
+    container_name: frontend
     image: rishithaiiitb/frontend
     ports:
       - "3000:3000"
     depends_on:
-      - imagecap-service
+      imagecap-service:
+        condition: service_started
     networks:
       - ic-network
 
@@ -64,4 +70,3 @@ networks:
 volumes:
   imagecapdb_data:
   logs:
-
