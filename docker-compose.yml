@@ -45,11 +45,8 @@ services:
       SPRING_JPA_HIBERNATE_DDL_AUTO: update
       SPRING_JPA_SHOW_SQL: true
       MODEL_SERVICE_URL: http://model-service:8060/predict/
-<<<<<<< HEAD
       NEW_RELIC_LICENSE_KEY: 23ce2b29dab3435fedbd14dd3cd444feFFFFNRAL
       NEW_RELIC_APP_NAME: image-captioning-backend
-=======
->>>>>>> de81ff07422c8c463893b905cf0b3341fb57c50f
     volumes:
       - logs:/logs
     depends_on:
