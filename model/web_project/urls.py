@@ -17,11 +17,13 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from myapp import captiongen
+from django.http import HttpResponse
 
 def root_view(request):
-    return HttpResponse("Root path is working!")  # Placeholder response
+    return HttpResponse("Root path is working!")
 
 urlpatterns = [
-    path('', root_view, name='root'), 
-    path('predict/', captiongen.generate_caption), 
+    path('', root_view, name='root'),
+    path('predict/', captiongen.generate_caption),
 ]
+
