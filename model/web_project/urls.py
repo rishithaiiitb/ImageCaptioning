@@ -18,6 +18,10 @@ from django.contrib import admin
 from django.urls import path
 from myapp import captiongen
 
+def root_view(request):
+    return HttpResponse("Root path is working!")  # Placeholder response
+
 urlpatterns = [
-    path('predict/', captiongen.generate_caption),
+    path('', root_view, name='root'), 
+    path('predict/', captiongen.generate_caption), 
 ]
